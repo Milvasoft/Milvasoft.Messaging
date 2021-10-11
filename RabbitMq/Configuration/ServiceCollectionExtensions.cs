@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Milvasoft.Messaging.RabbitMq.Publishers;
 using System;
 
 namespace Milvasoft.Messaging.RabbitMq.Configuration
@@ -9,7 +10,7 @@ namespace Milvasoft.Messaging.RabbitMq.Configuration
     public static class ServiceCollectionExtensions
     {
         /// <summary>
-        /// Adds <see cref="RabbitMqBusConfigurator"/> and <see cref="RabbitMqConfiguration"/> to service collection as singleton.
+        /// Adds <see cref="RabbitMqBusConfigurator"/>, <see cref="RabbitMqConfiguration"/> and <see cref="CommandSender"/> to service collection as singleton.
         /// </summary>
         /// <param name="services"></param>
         /// <param name="rabbitMqConfigurationAction"></param>
@@ -23,6 +24,8 @@ namespace Milvasoft.Messaging.RabbitMq.Configuration
             services.AddSingleton<IRabbitMqConfiguration>(config);
 
             services.AddSingleton<IRabbitMqBusConfigurator, RabbitMqBusConfigurator>();
+
+            services.AddSingleton<ICommandSender, CommandSender>();
 
             return services;
         }

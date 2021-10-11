@@ -173,7 +173,7 @@
         </member>
         <member name="M:Milvasoft.Messaging.RabbitMq.Configuration.ServiceCollectionExtensions.AddMilvaMessaging(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Milvasoft.Messaging.RabbitMq.Configuration.IRabbitMqConfiguration})">
             <summary>
-            Adds <see cref="T:Milvasoft.Messaging.RabbitMq.Configuration.RabbitMqBusConfigurator"/> and <see cref="T:Milvasoft.Messaging.RabbitMq.Configuration.RabbitMqConfiguration"/> to service collection as singleton.
+            Adds <see cref="T:Milvasoft.Messaging.RabbitMq.Configuration.RabbitMqBusConfigurator"/>, <see cref="T:Milvasoft.Messaging.RabbitMq.Configuration.RabbitMqConfiguration"/> and <see cref="T:Milvasoft.Messaging.RabbitMq.Publishers.CommandSender"/> to service collection as singleton.
             </summary>
             <param name="services"></param>
             <param name="rabbitMqConfigurationAction"></param>
