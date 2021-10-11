@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Milvasoft.Messaging", "Milvasoft.Messaging.csproj", "{F408FEAF-F88A-4978-8219-4B3D58FC9725}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F408FEAF-F88A-4978-8219-4B3D58FC9725}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F408FEAF-F88A-4978-8219-4B3D58FC9725}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F408FEAF-F88A-4978-8219-4B3D58FC9725}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F408FEAF-F88A-4978-8219-4B3D58FC9725}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8C441BE0-A731-4F99-B114-AF410B6E616D}
+	EndGlobalSection
+EndGlobal
