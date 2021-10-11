@@ -32,9 +32,9 @@ namespace Milvasoft.Messaging.RabbitMq.Publishers
 
             var sendToUri = new Uri($"{_rabbitMqConfigurator.GetRabbitMqUri()}{RabbitMqConstants.MailServiceQueueName}");
 
-            var endPoint = await bus.GetSendEndpoint(sendToUri);
+            var endPoint = await bus.GetSendEndpoint(sendToUri).ConfigureAwait(false);
 
-            await endPoint.Send(sendMailCommand);
+            await endPoint.Send(sendMailCommand).ConfigureAwait(false);
         }
     }
 }
