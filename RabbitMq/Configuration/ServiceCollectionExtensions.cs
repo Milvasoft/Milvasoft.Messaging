@@ -3,6 +3,9 @@ using System;
 
 namespace Milvasoft.Messaging.RabbitMq.Configuration
 {
+    /// <summary>
+    /// Service collection helpers for rabbitmq messaging.
+    /// </summary>
     public static class ServiceCollectionExtensions
     {
         /// <summary>
@@ -23,6 +26,5 @@ namespace Milvasoft.Messaging.RabbitMq.Configuration
 
             return services;
         }
-
     }
 }

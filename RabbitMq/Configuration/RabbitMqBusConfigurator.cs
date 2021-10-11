@@ -4,6 +4,9 @@ using System;
 
 namespace Milvasoft.Messaging.RabbitMq.Configuration
 {
+    /// <summary>
+    /// Bus factory for rabbitMq.
+    /// </summary>
     public interface IRabbitMqBusConfigurator
     {
         /// <summary>
@@ -20,6 +23,9 @@ namespace Milvasoft.Messaging.RabbitMq.Configuration
         string GetRabbitMqUri();
     }
 
+    /// <summary>
+    /// Bus factory for rabbitMq.
+    /// </summary>
     public class RabbitMqBusConfigurator : IRabbitMqBusConfigurator
     {
         private readonly IRabbitMqConfiguration _rabbitMqConfiguration;

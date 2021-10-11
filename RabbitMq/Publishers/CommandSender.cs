@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace Milvasoft.Messaging.RabbitMq.Publishers
 {
+    /// <summary>
+    /// Provides ready-written publish methods of commands in milvasoft messaging library.
+    /// </summary>
     public class CommandSender : ICommandSender
     {
         private readonly IRabbitMqBusConfigurator _rabbitMqConfigurator;
@@ -12,12 +15,17 @@ namespace Milvasoft.Messaging.RabbitMq.Publishers
         /// <summary>
         /// Initializes new instance of <see cref="CommandSender"/>
         /// </summary>
-        /// <param name="rabbitMqConfiguration"></param>
+        /// <param name="rabbitMqConfigurator"></param>
         public CommandSender(IRabbitMqBusConfigurator rabbitMqConfigurator)
         {
             _rabbitMqConfigurator = rabbitMqConfigurator;
         }
 
+        /// <summary>
+        /// Publish <paramref name="sendMailCommand"/> command to <see cref="RabbitMqConstants.MailServiceQueueName"/> queue.
+        /// </summary>
+        /// <param name="sendMailCommand"></param>
+        /// <returns></returns>
         public async Task PublishSendMailCommandAsync(ISendMailCommand sendMailCommand)
         {
             var bus = _rabbitMqConfigurator.CreateBus();

@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Milvasoft.Messaging</name>
+    </assembly>
+    <members>
+        <member name="T:Milvasoft.Messaging.RabbitMq.Commands.ISendMailCommand">
+            <summary>
+            Model required for sending mail.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.ISendMailCommand.From">
+            <summary>
+            The e-mail address of the sender
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.ISendMailCommand.FromPassword">
+            <summary>
+            Password of the e-mail address that sent the e-mail
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.ISendMailCommand.Port">
+            <summary>
+            Specifies which port the mail will be forwarded with.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.ISendMailCommand.SmtpHost">
+            <summary>
+            Specifies which host the mail will be forwarded with.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.ISendMailCommand.To">
+            <summary>
+            The e-mail address to which the mail will be sent.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.ISendMailCommand.Subject">
+            <summary>
+            Subject of mail.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.ISendMailCommand.HtmlBody">
+            <summary>
+            Html content of mail.
+            </summary>
+        </member>
+        <member name="T:Milvasoft.Messaging.RabbitMq.Commands.SendMailCommand">
+            <summary>
+            Model required for sending mail.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.SendMailCommand.From">
+            <summary>
+            The e-mail address of the sender
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.SendMailCommand.FromPassword">
+            <summary>
+            Password of the e-mail address that sent the e-mail
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.SendMailCommand.Port">
+            <summary>
+            Specifies which port the mail will be forwarded with.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.SendMailCommand.SmtpHost">
+            <summary>
+            Specifies which host the mail will be forwarded with.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.SendMailCommand.To">
+            <summary>
+            The e-mail address to which the mail will be sent.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.SendMailCommand.Subject">
+            <summary>
+            Subject of mail.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.SendMailCommand.HtmlBody">
+            <summary>
+            Html content of mail.
+            </summary>
+        </member>
+        <member name="T:Milvasoft.Messaging.RabbitMq.Configuration.IRabbitMqBusConfigurator">
+            <summary>
+            Bus factory for rabbitMq.
+            </summary>
+        </member>
+        <member name="M:Milvasoft.Messaging.RabbitMq.Configuration.IRabbitMqBusConfigurator.CreateBus(System.Action{MassTransit.RabbitMqTransport.IRabbitMqBusFactoryConfigurator})">
+            <summary>
+            Creates rabbitMq bus with mass transit bus factory.
+            </summary>
+            <param name="registrationAction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Milvasoft.Messaging.RabbitMq.Configuration.IRabbitMqBusConfigurator.GetRabbitMqUri">
+            <summary>
+            Get rabbitMq uri from <see cref="T:Milvasoft.Messaging.RabbitMq.Configuration.IRabbitMqConfiguration"/>.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Milvasoft.Messaging.RabbitMq.Configuration.RabbitMqBusConfigurator">
+            <summary>
+            Bus factory for rabbitMq.
+            </summary>
+        </member>
+        <member name="M:Milvasoft.Messaging.RabbitMq.Configuration.RabbitMqBusConfigurator.#ctor(Milvasoft.Messaging.RabbitMq.Configuration.IRabbitMqConfiguration)">
+            <summary>
+            Initializes new instance of <see cref="T:Milvasoft.Messaging.RabbitMq.Configuration.RabbitMqBusConfigurator"/>
+            </summary>
+            <param name="rabbitMqConfiguration"></param>
+        </member>
+        <member name="M:Milvasoft.Messaging.RabbitMq.Configuration.RabbitMqBusConfigurator.CreateBus(System.Action{MassTransit.RabbitMqTransport.IRabbitMqBusFactoryConfigurator})">
+            <summary>
+            Creates rabbitMq bus with mass transit bus factory.
+            </summary>
+            <param name="registrationAction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Milvasoft.Messaging.RabbitMq.Configuration.RabbitMqBusConfigurator.GetRabbitMqUri">
+            <summary>
+            Get rabbitMq uri from <see cref="T:Milvasoft.Messaging.RabbitMq.Configuration.IRabbitMqConfiguration"/>.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Milvasoft.Messaging.RabbitMq.Configuration.IRabbitMqConfiguration">
+            <summary>
+            Required information to connect to RabbitMq server.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Configuration.IRabbitMqConfiguration.RabbitMqUri">
+            <summary>
+            Uri of RabbitMq server.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Configuration.IRabbitMqConfiguration.UserName">
+            <summary>
+            UserName of RabbitMq server user.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Configuration.IRabbitMqConfiguration.Password">
+            <summary>
+            Password of RabbitMq server user.
+            </summary>
+        </member>
+        <member name="T:Milvasoft.Messaging.RabbitMq.Configuration.RabbitMqConfiguration">
+            <summary>
+            Required information to connect to RabbitMq server.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Configuration.RabbitMqConfiguration.RabbitMqUri">
+            <summary>
+            Uri of RabbitMq server.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Configuration.RabbitMqConfiguration.UserName">
+            <summary>
+            UserName of RabbitMq server user.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Configuration.RabbitMqConfiguration.Password">
+            <summary>
+            Password of RabbitMq server user.
+            </summary>
+        </member>
+        <member name="T:Milvasoft.Messaging.RabbitMq.Configuration.ServiceCollectionExtensions">
+            <summary>
+            Service collection helpers for rabbitmq messaging.
+            </summary>
+        </member>
+        <member name="M:Milvasoft.Messaging.RabbitMq.Configuration.ServiceCollectionExtensions.AddMilvaMessaging(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Milvasoft.Messaging.RabbitMq.Configuration.IRabbitMqConfiguration})">
+            <summary>
+            Adds <see cref="T:Milvasoft.Messaging.RabbitMq.Configuration.RabbitMqBusConfigurator"/> and <see cref="T:Milvasoft.Messaging.RabbitMq.Configuration.RabbitMqConfiguration"/> to service collection as singleton.
+            </summary>
+            <param name="services"></param>
+            <param name="rabbitMqConfigurationAction"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Milvasoft.Messaging.RabbitMq.Publishers.CommandSender">
+            <summary>
+            Provides ready-written publish methods of commands in milvasoft messaging library.
+            </summary>
+        </member>
+        <member name="M:Milvasoft.Messaging.RabbitMq.Publishers.CommandSender.#ctor(Milvasoft.Messaging.RabbitMq.Configuration.IRabbitMqBusConfigurator)">
+            <summary>
+            Initializes new instance of <see cref="T:Milvasoft.Messaging.RabbitMq.Publishers.CommandSender"/>
+            </summary>
+            <param name="rabbitMqConfigurator"></param>
+        </member>
+        <member name="M:Milvasoft.Messaging.RabbitMq.Publishers.CommandSender.PublishSendMailCommandAsync(Milvasoft.Messaging.RabbitMq.Commands.ISendMailCommand)">
+            <summary>
+            Publish <paramref name="sendMailCommand"/> command to <see cref="F:Milvasoft.Messaging.RabbitMq.RabbitMqConstants.MailServiceQueueName"/> queue.
+            </summary>
+            <param name="sendMailCommand"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Milvasoft.Messaging.RabbitMq.Publishers.ICommandSender">
+            <summary>
+            Provides ready-written publish methods of commands in milvasoft messaging library.
+            </summary>
+        </member>
+        <member name="M:Milvasoft.Messaging.RabbitMq.Publishers.ICommandSender.PublishSendMailCommandAsync(Milvasoft.Messaging.RabbitMq.Commands.ISendMailCommand)">
+            <summary>
+            Publish <paramref name="sendMailCommand"/> command to <see cref="F:Milvasoft.Messaging.RabbitMq.RabbitMqConstants.MailServiceQueueName"/> queue.
+            </summary>
+            <param name="sendMailCommand"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
