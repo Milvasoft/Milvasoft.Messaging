@@ -186,7 +186,7 @@
         </member>
         <member name="M:Milvasoft.Messaging.RabbitMq.Publishers.CommandSender.#ctor(Milvasoft.Messaging.RabbitMq.Configuration.IRabbitMqBusConfigurator)">
             <summary>
-            Initializes new instance of <see cref="T:Milvasoft.Messaging.RabbitMq.Publishers.CommandSender"/>
+            Initializes new instance of <see cref="T:Milvasoft.Messaging.RabbitMq.Publishers.CommandSender"/>.
             </summary>
             <param name="rabbitMqConfigurator"></param>
         </member>

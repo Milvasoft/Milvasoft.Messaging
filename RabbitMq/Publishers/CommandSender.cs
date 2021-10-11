@@ -13,7 +13,7 @@ namespace Milvasoft.Messaging.RabbitMq.Publishers
         private readonly IRabbitMqBusConfigurator _rabbitMqConfigurator;
 
         /// <summary>
-        /// Initializes new instance of <see cref="CommandSender"/>
+        /// Initializes new instance of <see cref="CommandSender"/>.
         /// </summary>
         /// <param name="rabbitMqConfigurator"></param>
         public CommandSender(IRabbitMqBusConfigurator rabbitMqConfigurator)
