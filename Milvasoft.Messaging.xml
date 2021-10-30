@@ -4,6 +4,76 @@
         <name>Milvasoft.Messaging</name>
     </assembly>
     <members>
+        <member name="T:Milvasoft.Messaging.RabbitMq.Commands.ILogAuditCommand">
+            <summary>
+            User activity log. Which is Add-Update-Delete process.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.ILogAuditCommand.Id">
+            <summary>
+            Id of log.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.ILogAuditCommand.UserName">
+            <summary>
+            UserName of the user who performed the activity
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.ILogAuditCommand.Activity">
+            <summary>
+            User performed activity.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.ILogAuditCommand.CreationDate">
+            <summary>
+            Creation date of entity.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.ILogAuditCommand.ConnectionString">
+            <summary>
+            Connection string for inserting log to database.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.ILogAuditCommand.Application">
+            <summary>
+            Sender application.
+            </summary>
+        </member>
+        <member name="T:Milvasoft.Messaging.RabbitMq.Commands.LogAuditCommand">
+            <summary>
+            User activity log. Which is Add-Update-Delete process.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.LogAuditCommand.Id">
+            <summary>
+            Id of log.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.LogAuditCommand.UserName">
+            <summary>
+            UserName of the user who performed the activity
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.LogAuditCommand.Activity">
+            <summary>
+            User performed activity.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.LogAuditCommand.CreationDate">
+            <summary>
+            Creation date of entity.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.LogAuditCommand.ConnectionString">
+            <summary>
+            Connection string for inserting log to database.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.LogAuditCommand.Application">
+            <summary>
+            Sender application.
+            </summary>
+        </member>
         <member name="T:Milvasoft.Messaging.RabbitMq.Commands.ISendMailCommand">
             <summary>
             Model required for sending mail.
@@ -195,6 +265,13 @@
             Publish <paramref name="sendMailCommand"/> command to <see cref="F:Milvasoft.Messaging.RabbitMq.RabbitMqConstants.MailServiceQueueName"/> queue.
             </summary>
             <param name="sendMailCommand"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Milvasoft.Messaging.RabbitMq.Publishers.CommandSender.PublishSendMailCommandAsync(Milvasoft.Messaging.RabbitMq.Commands.ILogAuditCommand)">
+            <summary>
+            Publish <paramref name="logAuditCommand"/> command to <see cref="F:Milvasoft.Messaging.RabbitMq.RabbitMqConstants.AuditServiceQueueName"/> queue.
+            </summary>
+            <param name="logAuditCommand"></param>
             <returns></returns>
         </member>
         <member name="T:Milvasoft.Messaging.RabbitMq.Publishers.ICommandSender">

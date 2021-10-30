@@ -36,5 +36,21 @@ namespace Milvasoft.Messaging.RabbitMq.Publishers
 
             await endPoint.Send(sendMailCommand).ConfigureAwait(false);
         }
+
+        /// <summary>
+        /// Publish <paramref name="logAuditCommand"/> command to <see cref="RabbitMqConstants.AuditServiceQueueName"/> queue.
+        /// </summary>
+        /// <param name="logAuditCommand"></param>
+        /// <returns></returns>
+        public async Task PublishSendMailCommandAsync(ILogAuditCommand logAuditCommand)
+        {
+            var bus = _rabbitMqConfigurator.CreateBus();
+
+            var sendToUri = new Uri($"{_rabbitMqConfigurator.GetRabbitMqUri()}{RabbitMqConstants.AuditServiceQueueName}");
+
+            var endPoint = await bus.GetSendEndpoint(sendToUri).ConfigureAwait(false);
+
+            await endPoint.Send(logAuditCommand).ConfigureAwait(false);
+        }
     }
 }
