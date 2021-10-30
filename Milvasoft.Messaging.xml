@@ -267,7 +267,7 @@
             <param name="sendMailCommand"></param>
             <returns></returns>
         </member>
-        <member name="M:Milvasoft.Messaging.RabbitMq.Publishers.CommandSender.PublishSendMailCommandAsync(Milvasoft.Messaging.RabbitMq.Commands.ILogAuditCommand)">
+        <member name="M:Milvasoft.Messaging.RabbitMq.Publishers.CommandSender.PublishLogAuditCommandAsync(Milvasoft.Messaging.RabbitMq.Commands.ILogAuditCommand)">
             <summary>
             Publish <paramref name="logAuditCommand"/> command to <see cref="F:Milvasoft.Messaging.RabbitMq.RabbitMqConstants.AuditServiceQueueName"/> queue.
             </summary>
@@ -284,6 +284,13 @@
             Publish <paramref name="sendMailCommand"/> command to <see cref="F:Milvasoft.Messaging.RabbitMq.RabbitMqConstants.MailServiceQueueName"/> queue.
             </summary>
             <param name="sendMailCommand"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Milvasoft.Messaging.RabbitMq.Publishers.ICommandSender.PublishLogAuditCommandAsync(Milvasoft.Messaging.RabbitMq.Commands.ILogAuditCommand)">
+            <summary>
+            Publish <paramref name="logAuditCommand"/> command to <see cref="F:Milvasoft.Messaging.RabbitMq.RabbitMqConstants.AuditServiceQueueName"/> queue.
+            </summary>
+            <param name="logAuditCommand"></param>
             <returns></returns>
         </member>
     </members>

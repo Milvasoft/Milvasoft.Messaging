@@ -14,5 +14,12 @@ namespace Milvasoft.Messaging.RabbitMq.Publishers
         /// <param name="sendMailCommand"></param>
         /// <returns></returns>
         Task PublishSendMailCommandAsync(ISendMailCommand sendMailCommand);
+
+        /// <summary>
+        /// Publish <paramref name="logAuditCommand"/> command to <see cref="RabbitMqConstants.AuditServiceQueueName"/> queue.
+        /// </summary>
+        /// <param name="logAuditCommand"></param>
+        /// <returns></returns>
+        Task PublishLogAuditCommandAsync(ILogAuditCommand logAuditCommand);
     }
 }

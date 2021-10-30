@@ -42,7 +42,7 @@ namespace Milvasoft.Messaging.RabbitMq.Publishers
         /// </summary>
         /// <param name="logAuditCommand"></param>
         /// <returns></returns>
-        public async Task PublishSendMailCommandAsync(ILogAuditCommand logAuditCommand)
+        public async Task PublishLogAuditCommandAsync(ILogAuditCommand logAuditCommand)
         {
             var bus = _rabbitMqConfigurator.CreateBus();
 
