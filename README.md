@@ -191,4 +191,4 @@ namespace Milvasoft.Consumers.Mails
 
 In this way, you can perform operations independent of your project with RabbitMQ. The main purpose of the library is to combine the models that need to be shared between the publisher and the consumer projects and to provide an abstraction for doing these operations. 
 
-### You can contribute to the development of this library by adding more various operations.
+### You can contribute to the improve of this library by adding more various operations like mail sending.
