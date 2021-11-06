@@ -61,9 +61,7 @@ await _lazyCommandSender.Value.PublishSendMailCommandAsync(new SendMailCommand
 
 Or you can publish command manually.
 
-For recieve and process send mail, you must write consumer project. This can be console application, web api or etc.
-
-We will create console application for this tutorial.
+For recieve and process send mail, you must write consumer project. This can be console application, web api or etc. We will create console application for this tutorial.
 
 The console project you have created needs to be constantly up, so that it listens to the RabbitMQ queue and performs the operation when a new command arrives. For this, your main method can be as follows;
 
