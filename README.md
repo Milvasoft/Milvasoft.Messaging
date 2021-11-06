@@ -43,8 +43,10 @@ For send mail command to RabbitMQ, you can use ready made publisher;
 ```csharp 1
 
 ...
+
+var commandSender = (ICommandSender)httpContext.RequestServices.GetService(typeof(ICommandSender));
 	    
-await _lazyCommandSender.Value.PublishSendMailCommandAsync(new SendMailCommand
+await commandSender.PublishSendMailCommandAsync(new SendMailCommand
 {
     From = "sender@yourdomain.com",
     FromPassword = "yourstrongpassword",
