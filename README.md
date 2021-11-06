@@ -149,7 +149,7 @@ namespace Milvasoft.Consumers.Mails
 
 ```
 
-Create class which named SendMailCommandConsumer. This class will listen to the queue and run the incoming commands. 
+Create class which named SendMailCommandConsumer. This class will run the incoming commands when a new command arrives in the listening queue.
 
 
 ```csharp 1
