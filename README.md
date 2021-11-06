@@ -63,9 +63,7 @@ Or you can publish command manually.
 
 For recieve and process send mail, you must write consumer project. This can be console application, web api or etc. We will create console application for this tutorial.
 
-The console project you have created needs to be constantly up, so that it listens to the RabbitMQ queue and performs the operation when a new command arrives. For this, your main method can be as follows;
-
-In Program.cs;
+The console project you have created needs to be constantly up, so that it listens to the RabbitMQ queue and performs the operation when a new command arrives. For this, your main method must be as follows in Program.cs;
 
 ```csharp 1
 
@@ -191,6 +189,6 @@ namespace Milvasoft.Consumers.Mails
 
 ```
 
-In this way, you can perform operations independent of your project with RabbitMQ. The main purpose of the library is to combine the models that need to be shared between the publisher and the consumer and to provide an abstraction for doing these operations. 
+In this way, you can perform operations independent of your project with RabbitMQ. The main purpose of the library is to combine the models that need to be shared between the publisher and the consumer projects and to provide an abstraction for doing these operations. 
 
 ### You can contribute to the development of this library by adding more various operations.
