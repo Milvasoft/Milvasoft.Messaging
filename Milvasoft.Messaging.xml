@@ -24,6 +24,11 @@
             User performed activity.
             </summary>
         </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.ILogAuditCommand.Ip">
+            <summary>
+            Activity performer ip address.
+            </summary>
+        </member>
         <member name="P:Milvasoft.Messaging.RabbitMq.Commands.ILogAuditCommand.CreationDate">
             <summary>
             Creation date of entity.
@@ -57,6 +62,11 @@
         <member name="P:Milvasoft.Messaging.RabbitMq.Commands.LogAuditCommand.Activity">
             <summary>
             User performed activity.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.LogAuditCommand.Ip">
+            <summary>
+            Activity performer ip address.
             </summary>
         </member>
         <member name="P:Milvasoft.Messaging.RabbitMq.Commands.LogAuditCommand.CreationDate">

@@ -23,6 +23,11 @@ namespace Milvasoft.Messaging.RabbitMq.Commands
         public string Activity { get; set; }
 
         /// <summary>
+        /// Activity performer ip address.
+        /// </summary>
+        public string Ip { get; set; }
+
+        /// <summary>
         /// Creation date of entity.
         /// </summary>
         public DateTime CreationDate { get; set; }
@@ -57,6 +62,11 @@ namespace Milvasoft.Messaging.RabbitMq.Commands
         /// User performed activity.
         /// </summary>
         public string Activity { get; set; }
+
+        /// <summary>
+        /// Activity performer ip address.
+        /// </summary>
+        public string Ip { get; set; }
 
         /// <summary>
         /// Creation date of entity.
