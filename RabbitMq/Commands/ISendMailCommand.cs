@@ -27,6 +27,11 @@ public interface ISendMailCommand
     /// </summary>
     public string SmtpHost { get; set; }
 
+    /// <summary>
+    /// Gets or sets enable ssql of mail sender smtp client.
+    /// </summary>
+    public bool EnableSsl { get; set; }
+
     #endregion
 
     #region Mail Info
@@ -75,6 +80,11 @@ public class SendMailCommand : ISendMailCommand
     /// Specifies which host the mail will be forwarded with.
     /// </summary>
     public string SmtpHost { get; set; }
+
+    /// <summary>
+    /// Gets or sets enable ssql of mail sender smtp client.
+    /// </summary>
+    public bool EnableSsl { get; set; }
 
     #endregion
 

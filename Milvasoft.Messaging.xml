@@ -109,6 +109,11 @@
             Specifies which host the mail will be forwarded with.
             </summary>
         </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.ISendMailCommand.EnableSsl">
+            <summary>
+            Gets or sets enable ssql of mail sender smtp client.
+            </summary>
+        </member>
         <member name="P:Milvasoft.Messaging.RabbitMq.Commands.ISendMailCommand.To">
             <summary>
             The e-mail address to which the mail will be sent.
@@ -147,6 +152,11 @@
         <member name="P:Milvasoft.Messaging.RabbitMq.Commands.SendMailCommand.SmtpHost">
             <summary>
             Specifies which host the mail will be forwarded with.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.SendMailCommand.EnableSsl">
+            <summary>
+            Gets or sets enable ssql of mail sender smtp client.
             </summary>
         </member>
         <member name="P:Milvasoft.Messaging.RabbitMq.Commands.SendMailCommand.To">
