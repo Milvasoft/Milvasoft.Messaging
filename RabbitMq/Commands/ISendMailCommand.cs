@@ -8,6 +8,11 @@ public interface ISendMailCommand
     #region Sender Info
 
     /// <summary>
+    /// The display name of the sender
+    /// </summary>
+    public string DisplayName { get; set; }
+
+    /// <summary>
     /// The e-mail address of the sender
     /// </summary>
     public string From { get; set; }
@@ -60,6 +65,11 @@ public interface ISendMailCommand
 public class SendMailCommand : ISendMailCommand
 {
     #region Sender Info
+
+    /// <summary>
+    /// The display name of the sender
+    /// </summary>
+    public string DisplayName { get; set; }
 
     /// <summary>
     /// The e-mail address of the sender
