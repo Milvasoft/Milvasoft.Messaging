@@ -4,7 +4,7 @@
 
 # Requirements
 One of the runtime environment is required from below
-* .NET 6.0
+* .NET 7.0
 * RabbitMQ
 
 # Installation
