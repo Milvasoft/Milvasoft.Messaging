@@ -9,34 +9,19 @@
             User activity log. Which is Add-Update-Delete process.
             </summary>
         </member>
-        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.ILogAuditCommand.Id">
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.ILogAuditCommand.Data">
             <summary>
-            Id of log.
-            </summary>
-        </member>
-        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.ILogAuditCommand.UserName">
-            <summary>
-            UserName of the user who performed the activity
-            </summary>
-        </member>
-        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.ILogAuditCommand.Activity">
-            <summary>
-            User performed activity.
-            </summary>
-        </member>
-        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.ILogAuditCommand.Ip">
-            <summary>
-            Activity performer ip address.
-            </summary>
-        </member>
-        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.ILogAuditCommand.CreationDate">
-            <summary>
-            Creation date of entity.
+            Log data
             </summary>
         </member>
         <member name="P:Milvasoft.Messaging.RabbitMq.Commands.ILogAuditCommand.ConnectionString">
             <summary>
             Connection string for inserting log to database.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.ILogAuditCommand.TableName">
+            <summary>
+            Log table name.
             </summary>
         </member>
         <member name="P:Milvasoft.Messaging.RabbitMq.Commands.ILogAuditCommand.Application">
@@ -49,34 +34,19 @@
             User activity log. Which is Add-Update-Delete process.
             </summary>
         </member>
-        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.LogAuditCommand.Id">
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.LogAuditCommand.Data">
             <summary>
-            Id of log.
-            </summary>
-        </member>
-        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.LogAuditCommand.UserName">
-            <summary>
-            UserName of the user who performed the activity
-            </summary>
-        </member>
-        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.LogAuditCommand.Activity">
-            <summary>
-            User performed activity.
-            </summary>
-        </member>
-        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.LogAuditCommand.Ip">
-            <summary>
-            Activity performer ip address.
-            </summary>
-        </member>
-        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.LogAuditCommand.CreationDate">
-            <summary>
-            Creation date of entity.
+            Log data
             </summary>
         </member>
         <member name="P:Milvasoft.Messaging.RabbitMq.Commands.LogAuditCommand.ConnectionString">
             <summary>
             Connection string for inserting log to database.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.LogAuditCommand.TableName">
+            <summary>
+            Log table name.
             </summary>
         </member>
         <member name="P:Milvasoft.Messaging.RabbitMq.Commands.LogAuditCommand.Application">
