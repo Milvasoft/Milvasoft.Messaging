@@ -45,7 +45,7 @@ public interface ISendMailCommand
     /// <summary>
     /// Gets or sets a value indicating whether the default credentials are used to access the SMTP server.
     /// </summary>
-    public bool UseCredentials { get; set; }
+    public bool? UseCredentials { get; set; }
 
     #endregion
 
@@ -114,7 +114,7 @@ public class SendMailCommand : ISendMailCommand
     /// <summary>
     /// Gets or sets a value indicating whether the default credentials are used to access the SMTP server.
     /// </summary>
-    public bool UseCredentials { get; set; }
+    public bool? UseCredentials { get; set; }
 
     #endregion
 
