@@ -37,6 +37,16 @@ public interface ISendMailCommand
     /// </summary>
     public bool EnableSsl { get; set; }
 
+    /// <summary>
+    /// The e-mail address of the sender
+    /// </summary>
+    public string Sender { get; set; }
+
+    /// <summary>
+    /// Gets or sets a value indicating whether the default credentials are used to access the SMTP server.
+    /// </summary>
+    public bool UseCredentials { get; set; }
+
     #endregion
 
     #region Mail Info
@@ -95,6 +105,16 @@ public class SendMailCommand : ISendMailCommand
     /// Gets or sets enable ssql of mail sender smtp client.
     /// </summary>
     public bool EnableSsl { get; set; }
+
+    /// <summary>
+    /// The e-mail address of the sender
+    /// </summary>
+    public string Sender { get; set; }
+
+    /// <summary>
+    /// Gets or sets a value indicating whether the default credentials are used to access the SMTP server.
+    /// </summary>
+    public bool UseCredentials { get; set; }
 
     #endregion
 

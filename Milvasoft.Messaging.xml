@@ -89,6 +89,16 @@
             Gets or sets enable ssql of mail sender smtp client.
             </summary>
         </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.ISendMailCommand.Sender">
+            <summary>
+            The e-mail address of the sender
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.ISendMailCommand.UseCredentials">
+            <summary>
+            Gets or sets a value indicating whether the default credentials are used to access the SMTP server.
+            </summary>
+        </member>
         <member name="P:Milvasoft.Messaging.RabbitMq.Commands.ISendMailCommand.To">
             <summary>
             The e-mail address to which the mail will be sent.
@@ -137,6 +147,16 @@
         <member name="P:Milvasoft.Messaging.RabbitMq.Commands.SendMailCommand.EnableSsl">
             <summary>
             Gets or sets enable ssql of mail sender smtp client.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.SendMailCommand.Sender">
+            <summary>
+            The e-mail address of the sender
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.SendMailCommand.UseCredentials">
+            <summary>
+            Gets or sets a value indicating whether the default credentials are used to access the SMTP server.
             </summary>
         </member>
         <member name="P:Milvasoft.Messaging.RabbitMq.Commands.SendMailCommand.To">

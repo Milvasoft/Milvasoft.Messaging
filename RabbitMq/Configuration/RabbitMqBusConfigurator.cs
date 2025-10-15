@@ -1,5 +1,4 @@
 ﻿using MassTransit;
-using MassTransit.RabbitMqTransport;
 using System;
 
 namespace Milvasoft.Messaging.RabbitMq.Configuration;
@@ -26,18 +25,13 @@ public interface IRabbitMqBusConfigurator
 /// <summary>
 /// Bus factory for rabbitMq.
 /// </summary>
-public class RabbitMqBusConfigurator : IRabbitMqBusConfigurator
+/// <remarks>
+/// Initializes new instance of <see cref="RabbitMqBusConfigurator"/>
+/// </remarks>
+/// <param name="rabbitMqConfiguration"></param>
+public class RabbitMqBusConfigurator(IRabbitMqConfiguration rabbitMqConfiguration) : IRabbitMqBusConfigurator
 {
-    private readonly IRabbitMqConfiguration _rabbitMqConfiguration;
-
-    /// <summary>
-    /// Initializes new instance of <see cref="RabbitMqBusConfigurator"/>
-    /// </summary>
-    /// <param name="rabbitMqConfiguration"></param>
-    public RabbitMqBusConfigurator(IRabbitMqConfiguration rabbitMqConfiguration)
-    {
-        _rabbitMqConfiguration = rabbitMqConfiguration;
-    }
+    private readonly IRabbitMqConfiguration _rabbitMqConfiguration = rabbitMqConfiguration;
 
     /// <summary>
     /// Creates rabbitMq bus with mass transit bus factory.

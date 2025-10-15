@@ -8,18 +8,13 @@ namespace Milvasoft.Messaging.RabbitMq.Publishers;
 /// <summary>
 /// Provides ready-written publish methods of commands in milvasoft messaging library.
 /// </summary>
-public class CommandSender : ICommandSender
+/// <remarks>
+/// Initializes new instance of <see cref="CommandSender"/>.
+/// </remarks>
+/// <param name="rabbitMqConfigurator"></param>
+public class CommandSender(IRabbitMqBusConfigurator rabbitMqConfigurator) : ICommandSender
 {
-    private readonly IRabbitMqBusConfigurator _rabbitMqConfigurator;
-
-    /// <summary>
-    /// Initializes new instance of <see cref="CommandSender"/>.
-    /// </summary>
-    /// <param name="rabbitMqConfigurator"></param>
-    public CommandSender(IRabbitMqBusConfigurator rabbitMqConfigurator)
-    {
-        _rabbitMqConfigurator = rabbitMqConfigurator;
-    }
+    private readonly IRabbitMqBusConfigurator _rabbitMqConfigurator = rabbitMqConfigurator;
 
     /// <summary>
     /// Publish <paramref name="sendMailCommand"/> command to <see cref="RabbitMqConstants.MailServiceQueueName"/> queue.
