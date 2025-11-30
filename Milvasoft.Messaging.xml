@@ -196,11 +196,18 @@
             <summary>
             Bus factory for rabbitMq.
             </summary>
+            <remarks>
+            Initializes new instance of <see cref="T:Milvasoft.Messaging.RabbitMq.Configuration.RabbitMqBusConfigurator"/>
+            </remarks>
+            <param name="rabbitMqConfiguration"></param>
         </member>
         <member name="M:Milvasoft.Messaging.RabbitMq.Configuration.RabbitMqBusConfigurator.#ctor(Milvasoft.Messaging.RabbitMq.Configuration.IRabbitMqConfiguration)">
             <summary>
-            Initializes new instance of <see cref="T:Milvasoft.Messaging.RabbitMq.Configuration.RabbitMqBusConfigurator"/>
+            Bus factory for rabbitMq.
             </summary>
+            <remarks>
+            Initializes new instance of <see cref="T:Milvasoft.Messaging.RabbitMq.Configuration.RabbitMqBusConfigurator"/>
+            </remarks>
             <param name="rabbitMqConfiguration"></param>
         </member>
         <member name="M:Milvasoft.Messaging.RabbitMq.Configuration.RabbitMqBusConfigurator.CreateBus(System.Action{MassTransit.IRabbitMqBusFactoryConfigurator})">
@@ -273,11 +280,18 @@
             <summary>
             Provides ready-written publish methods of commands in milvasoft messaging library.
             </summary>
+            <remarks>
+            Initializes new instance of <see cref="T:Milvasoft.Messaging.RabbitMq.Publishers.CommandSender"/>.
+            </remarks>
+            <param name="rabbitMqConfigurator"></param>
         </member>
         <member name="M:Milvasoft.Messaging.RabbitMq.Publishers.CommandSender.#ctor(Milvasoft.Messaging.RabbitMq.Configuration.IRabbitMqBusConfigurator)">
             <summary>
-            Initializes new instance of <see cref="T:Milvasoft.Messaging.RabbitMq.Publishers.CommandSender"/>.
+            Provides ready-written publish methods of commands in milvasoft messaging library.
             </summary>
+            <remarks>
+            Initializes new instance of <see cref="T:Milvasoft.Messaging.RabbitMq.Publishers.CommandSender"/>.
+            </remarks>
             <param name="rabbitMqConfigurator"></param>
         </member>
         <member name="M:Milvasoft.Messaging.RabbitMq.Publishers.CommandSender.PublishSendMailCommandAsync(Milvasoft.Messaging.RabbitMq.Commands.ISendMailCommand)">
