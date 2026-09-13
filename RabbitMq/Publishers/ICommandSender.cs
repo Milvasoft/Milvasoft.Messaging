@@ -21,4 +21,18 @@ public interface ICommandSender
     /// <param name="logAuditCommand"></param>
     /// <returns></returns>
     Task PublishLogAuditCommandAsync(ILogAuditCommand logAuditCommand);
+
+    /// <summary>
+    /// Publish <paramref name="addNotificationCommand"/> command to <see cref="RabbitMqConstants.NotificationServiceQueueName"/> queue.
+    /// </summary>
+    /// <param name="addNotificationCommand"></param>
+    /// <returns></returns>
+    Task PublishAddNotificationCommandAsync(IAddNotificationCommand addNotificationCommand);
+
+    /// <summary>
+    /// Publish <paramref name="sendPushCommand"/> command to <see cref="RabbitMqConstants.PushServiceQueueName"/> queue.
+    /// </summary>
+    /// <param name="sendPushCommand"></param>
+    /// <returns></returns>
+    Task PublishSendPushCommandAsync(ISendPushCommand sendPushCommand);
 }

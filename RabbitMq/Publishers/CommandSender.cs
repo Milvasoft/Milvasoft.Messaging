@@ -47,4 +47,36 @@ public class CommandSender(IRabbitMqBusConfigurator rabbitMqConfigurator) : ICom
 
         await endPoint.Send(logAuditCommand).ConfigureAwait(false);
     }
+
+    /// <summary>
+    /// Publish <paramref name="addNotificationCommand"/> command to <see cref="RabbitMqConstants.NotificationServiceQueueName"/> queue.
+    /// </summary>
+    /// <param name="addNotificationCommand"></param>
+    /// <returns></returns>
+    public async Task PublishAddNotificationCommandAsync(IAddNotificationCommand addNotificationCommand)
+    {
+        var bus = _rabbitMqConfigurator.CreateBus();
+
+        var sendToUri = new Uri($"{_rabbitMqConfigurator.GetRabbitMqUri()}{RabbitMqConstants.NotificationServiceQueueName}");
+
+        var endPoint = await bus.GetSendEndpoint(sendToUri).ConfigureAwait(false);
+
+        await endPoint.Send(addNotificationCommand).ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// Publish <paramref name="sendPushCommand"/> command to <see cref="RabbitMqConstants.PushServiceQueueName"/> queue.
+    /// </summary>
+    /// <param name="sendPushCommand"></param>
+    /// <returns></returns>
+    public async Task PublishSendPushCommandAsync(ISendPushCommand sendPushCommand)
+    {
+        var bus = _rabbitMqConfigurator.CreateBus();
+
+        var sendToUri = new Uri($"{_rabbitMqConfigurator.GetRabbitMqUri()}{RabbitMqConstants.PushServiceQueueName}");
+
+        var endPoint = await bus.GetSendEndpoint(sendToUri).ConfigureAwait(false);
+
+        await endPoint.Send(sendPushCommand).ConfigureAwait(false);
+    }
 }

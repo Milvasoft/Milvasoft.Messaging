@@ -4,6 +4,58 @@
         <name>Milvasoft.Messaging</name>
     </assembly>
     <members>
+        <member name="T:Milvasoft.Messaging.RabbitMq.Commands.IAddNotificationCommand">
+            <summary>
+            Command to insert an in-app (internal) notification row. Kept generic like <see cref="T:Milvasoft.Messaging.RabbitMq.Commands.ILogAuditCommand"/>
+            so any project can push in-app notifications into its own database/table over the shared bus: the
+            consumer inserts <see cref="P:Milvasoft.Messaging.RabbitMq.Commands.IAddNotificationCommand.Data"/> into <see cref="P:Milvasoft.Messaging.RabbitMq.Commands.IAddNotificationCommand.TableName"/> using <see cref="P:Milvasoft.Messaging.RabbitMq.Commands.IAddNotificationCommand.ConnectionString"/>.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.IAddNotificationCommand.Data">
+            <summary>
+            Notification row data as column name → value (e.g. RecipientUserName, Type, Text, Data, ...).
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.IAddNotificationCommand.ConnectionString">
+            <summary>
+            Connection string of the database the notification row is inserted into.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.IAddNotificationCommand.TableName">
+            <summary>
+            Target table name for the notification row.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.IAddNotificationCommand.Application">
+            <summary>
+            Sender application.
+            </summary>
+        </member>
+        <member name="T:Milvasoft.Messaging.RabbitMq.Commands.AddNotificationCommand">
+            <summary>
+            Command to insert an in-app (internal) notification row.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.AddNotificationCommand.Data">
+            <summary>
+            Notification row data as column name → value (e.g. RecipientUserName, Type, Text, Data, ...).
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.AddNotificationCommand.ConnectionString">
+            <summary>
+            Connection string of the database the notification row is inserted into.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.AddNotificationCommand.TableName">
+            <summary>
+            Target table name for the notification row.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.AddNotificationCommand.Application">
+            <summary>
+            Sender application.
+            </summary>
+        </member>
         <member name="T:Milvasoft.Messaging.RabbitMq.Commands.ILogAuditCommand">
             <summary>
             User activity log. Which is Add-Update-Delete process.
@@ -174,6 +226,68 @@
             Html content of mail.
             </summary>
         </member>
+        <member name="T:Milvasoft.Messaging.RabbitMq.Commands.ISendPushCommand">
+            <summary>
+            Command to send a push notification. The consumer delivers it to the given device <see cref="P:Milvasoft.Messaging.RabbitMq.Commands.ISendPushCommand.Tokens"/>
+            via FCM. Device-token resolution is done by the producer, so the push consumer stays storage-agnostic
+            (no database access) and reusable across projects.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.ISendPushCommand.Application">
+            <summary>
+            Sender application.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.ISendPushCommand.Tokens">
+            <summary>
+            Target device (FCM) tokens.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.ISendPushCommand.Title">
+            <summary>
+            Notification title.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.ISendPushCommand.Body">
+            <summary>
+            Notification body.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.ISendPushCommand.Data">
+            <summary>
+            Arbitrary data payload delivered alongside the notification (FCM data message).
+            </summary>
+        </member>
+        <member name="T:Milvasoft.Messaging.RabbitMq.Commands.SendPushCommand">
+            <summary>
+            Command to send a push notification.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.SendPushCommand.Application">
+            <summary>
+            Sender application.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.SendPushCommand.Tokens">
+            <summary>
+            Target device (FCM) tokens.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.SendPushCommand.Title">
+            <summary>
+            Notification title.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.SendPushCommand.Body">
+            <summary>
+            Notification body.
+            </summary>
+        </member>
+        <member name="P:Milvasoft.Messaging.RabbitMq.Commands.SendPushCommand.Data">
+            <summary>
+            Arbitrary data payload delivered alongside the notification (FCM data message).
+            </summary>
+        </member>
         <member name="T:Milvasoft.Messaging.RabbitMq.Configuration.IRabbitMqBusConfigurator">
             <summary>
             Bus factory for rabbitMq.
@@ -308,6 +422,20 @@
             <param name="logAuditCommand"></param>
             <returns></returns>
         </member>
+        <member name="M:Milvasoft.Messaging.RabbitMq.Publishers.CommandSender.PublishAddNotificationCommandAsync(Milvasoft.Messaging.RabbitMq.Commands.IAddNotificationCommand)">
+            <summary>
+            Publish <paramref name="addNotificationCommand"/> command to <see cref="F:Milvasoft.Messaging.RabbitMq.RabbitMqConstants.NotificationServiceQueueName"/> queue.
+            </summary>
+            <param name="addNotificationCommand"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Milvasoft.Messaging.RabbitMq.Publishers.CommandSender.PublishSendPushCommandAsync(Milvasoft.Messaging.RabbitMq.Commands.ISendPushCommand)">
+            <summary>
+            Publish <paramref name="sendPushCommand"/> command to <see cref="F:Milvasoft.Messaging.RabbitMq.RabbitMqConstants.PushServiceQueueName"/> queue.
+            </summary>
+            <param name="sendPushCommand"></param>
+            <returns></returns>
+        </member>
         <member name="T:Milvasoft.Messaging.RabbitMq.Publishers.ICommandSender">
             <summary>
             Provides ready-written publish methods of commands in milvasoft messaging library.
@@ -325,6 +453,20 @@
             Publish <paramref name="logAuditCommand"/> command to <see cref="F:Milvasoft.Messaging.RabbitMq.RabbitMqConstants.AuditServiceQueueName"/> queue.
             </summary>
             <param name="logAuditCommand"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Milvasoft.Messaging.RabbitMq.Publishers.ICommandSender.PublishAddNotificationCommandAsync(Milvasoft.Messaging.RabbitMq.Commands.IAddNotificationCommand)">
+            <summary>
+            Publish <paramref name="addNotificationCommand"/> command to <see cref="F:Milvasoft.Messaging.RabbitMq.RabbitMqConstants.NotificationServiceQueueName"/> queue.
+            </summary>
+            <param name="addNotificationCommand"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Milvasoft.Messaging.RabbitMq.Publishers.ICommandSender.PublishSendPushCommandAsync(Milvasoft.Messaging.RabbitMq.Commands.ISendPushCommand)">
+            <summary>
+            Publish <paramref name="sendPushCommand"/> command to <see cref="F:Milvasoft.Messaging.RabbitMq.RabbitMqConstants.PushServiceQueueName"/> queue.
+            </summary>
+            <param name="sendPushCommand"></param>
             <returns></returns>
         </member>
     </members>
