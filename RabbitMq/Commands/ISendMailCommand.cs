@@ -8,6 +8,13 @@ public interface ISendMailCommand
     #region Sender Info
 
     /// <summary>
+    /// Name of the SMTP profile configured on the mail service (<c>Mail:Profiles</c>). When it is set the mail
+    /// service uses that profile and IGNORES the sender fields above, so the publisher does not need to know or
+    /// send any SMTP credentials. Leave it empty to keep sending the sender info with the message (legacy).
+    /// </summary>
+    public string ConfigurationKey { get; set; }
+
+    /// <summary>
     /// The display name of the sender
     /// </summary>
     public string DisplayName { get; set; }
@@ -75,6 +82,13 @@ public interface ISendMailCommand
 public class SendMailCommand : ISendMailCommand
 {
     #region Sender Info
+
+    /// <summary>
+    /// Name of the SMTP profile configured on the mail service (<c>Mail:Profiles</c>). When it is set the mail
+    /// service uses that profile and IGNORES the sender fields above, so the publisher does not need to know or
+    /// send any SMTP credentials. Leave it empty to keep sending the sender info with the message (legacy).
+    /// </summary>
+    public string ConfigurationKey { get; set; }
 
     /// <summary>
     /// The display name of the sender
