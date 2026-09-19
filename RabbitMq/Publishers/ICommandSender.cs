@@ -35,4 +35,12 @@ public interface ICommandSender
     /// <param name="sendPushCommand"></param>
     /// <returns></returns>
     Task PublishSendPushCommandAsync(ISendPushCommand sendPushCommand);
+
+    /// <summary>
+    /// Publish <paramref name="removePushTokensCommand"/> command to the <see cref="RabbitMqConstants.GetRemovePushTokensQueueName(string)"/> queue
+    /// of its <see cref="IRemovePushTokensCommand.ConfigurationKey"/>.
+    /// </summary>
+    /// <param name="removePushTokensCommand"></param>
+    /// <returns></returns>
+    Task PublishRemovePushTokensCommandAsync(IRemovePushTokensCommand removePushTokensCommand);
 }

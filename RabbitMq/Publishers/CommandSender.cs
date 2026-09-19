@@ -79,4 +79,37 @@ public class CommandSender(IRabbitMqBusConfigurator rabbitMqConfigurator) : ICom
 
         await endPoint.Send(sendPushCommand).ConfigureAwait(false);
     }
+
+    /// <summary>
+    /// Publish <paramref name="removePushTokensCommand"/> command to the <see cref="RabbitMqConstants.GetRemovePushTokensQueueName(string)"/> queue
+    /// of its <see cref="IRemovePushTokensCommand.ConfigurationKey"/>.
+    /// </summary>
+    /// <param name="removePushTokensCommand"></param>
+    /// <returns></returns>
+    public async Task PublishRemovePushTokensCommandAsync(IRemovePushTokensCommand removePushTokensCommand)
+    {
+        var bus = _rabbitMqConfigurator.CreateBus();
+
+        var sendToUri = GetRemovePushTokensUri(_rabbitMqConfigurator.GetRabbitMqUri(), removePushTokensCommand.ConfigurationKey);
+
+        var endPoint = await bus.GetSendEndpoint(sendToUri).ConfigureAwait(false);
+
+        await endPoint.Send(removePushTokensCommand).ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// Address of the <see cref="RabbitMqConstants.GetRemovePushTokensQueueName(string)"/> queue of <paramref name="configurationKey"/>.
+    /// Nothing consumes that queue continuously (its owner drains it on a schedule), so the address asks the broker to
+    /// declare the queue and bind it to its exchange on the first send; otherwise commands sent before the owner's
+    /// first drain would be dropped.
+    /// </summary>
+    /// <param name="rabbitMqUri"></param>
+    /// <param name="configurationKey"></param>
+    /// <returns></returns>
+    public static Uri GetRemovePushTokensUri(string rabbitMqUri, string configurationKey)
+    {
+        var queueName = RabbitMqConstants.GetRemovePushTokensQueueName(configurationKey);
+
+        return new Uri($"{rabbitMqUri}{queueName}?bind=true&queue={queueName}");
+    }
 }
