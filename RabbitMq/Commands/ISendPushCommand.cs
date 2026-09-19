@@ -10,6 +10,13 @@ namespace Milvasoft.Messaging.RabbitMq.Commands;
 public interface ISendPushCommand
 {
     /// <summary>
+    /// Name of the Firebase profile configured on the push service (<c>Fcm:Profiles</c>). The push service sends with
+    /// that profile's service account, so one push service can serve several apps (Firebase projects) and the
+    /// publisher never holds Firebase credentials. Empty or unknown falls back to the service's default profile.
+    /// </summary>
+    public string ConfigurationKey { get; set; }
+
+    /// <summary>
     /// Sender application.
     /// </summary>
     public string Application { get; set; }
@@ -40,6 +47,13 @@ public interface ISendPushCommand
 /// </summary>
 public class SendPushCommand : ISendPushCommand
 {
+    /// <summary>
+    /// Name of the Firebase profile configured on the push service (<c>Fcm:Profiles</c>). The push service sends with
+    /// that profile's service account, so one push service can serve several apps (Firebase projects) and the
+    /// publisher never holds Firebase credentials. Empty or unknown falls back to the service's default profile.
+    /// </summary>
+    public string ConfigurationKey { get; set; }
+
     /// <summary>
     /// Sender application.
     /// </summary>
