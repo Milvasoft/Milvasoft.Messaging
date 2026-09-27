@@ -81,6 +81,22 @@ public class CommandSender(IRabbitMqBusConfigurator rabbitMqConfigurator) : ICom
     }
 
     /// <summary>
+    /// Publish <paramref name="sendLiveActivityCommand"/> command to <see cref="RabbitMqConstants.PushServiceQueueName"/> queue.
+    /// </summary>
+    /// <param name="sendLiveActivityCommand"></param>
+    /// <returns></returns>
+    public async Task PublishSendLiveActivityCommandAsync(ISendLiveActivityCommand sendLiveActivityCommand)
+    {
+        var bus = _rabbitMqConfigurator.CreateBus();
+
+        var sendToUri = new Uri($"{_rabbitMqConfigurator.GetRabbitMqUri()}{RabbitMqConstants.PushServiceQueueName}");
+
+        var endPoint = await bus.GetSendEndpoint(sendToUri).ConfigureAwait(false);
+
+        await endPoint.Send(sendLiveActivityCommand).ConfigureAwait(false);
+    }
+
+    /// <summary>
     /// Publish <paramref name="removePushTokensCommand"/> command to the <see cref="RabbitMqConstants.GetRemovePushTokensQueueName(string)"/> queue
     /// of its <see cref="IRemovePushTokensCommand.ConfigurationKey"/>.
     /// </summary>

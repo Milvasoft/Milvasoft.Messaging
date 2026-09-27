@@ -37,6 +37,13 @@ public interface ICommandSender
     Task PublishSendPushCommandAsync(ISendPushCommand sendPushCommand);
 
     /// <summary>
+    /// Publish <paramref name="sendLiveActivityCommand"/> command to <see cref="RabbitMqConstants.PushServiceQueueName"/> queue.
+    /// </summary>
+    /// <param name="sendLiveActivityCommand"></param>
+    /// <returns></returns>
+    Task PublishSendLiveActivityCommandAsync(ISendLiveActivityCommand sendLiveActivityCommand);
+
+    /// <summary>
     /// Publish <paramref name="removePushTokensCommand"/> command to the <see cref="RabbitMqConstants.GetRemovePushTokensQueueName(string)"/> queue
     /// of its <see cref="IRemovePushTokensCommand.ConfigurationKey"/>.
     /// </summary>
