@@ -11,15 +11,19 @@ on:
     paths:
       - '**'
 
+permissions:
+  contents: read
+  id-token: write  # GitHub OIDC token for NuGet trusted publishing
+
 jobs:
   build:
 
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
+      uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 10.0.x
 
@@ -29,8 +33,16 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
 
-    - name: Pack Milvasoft.Caching.InMemory project
+    - name: Pack Milvasoft.Messaging project
       run: dotnet pack --no-build --configuration Release --include-symbols -p:SymbolPackageFormat=snupkg -o .
 
+    - name: NuGet login (OIDC to temporary API key)
+      if: github.event_name != 'pull_request'
+      uses: NuGet/login@v1
+      id: nuget-login
+      with:
+        user: bugrakosen
+
     - name: Publish package to NuGet
-      run: dotnet nuget push *.nupkg --api-key ${{secrets.NUGET_API_KEY}} --source "https://api.nuget.org/v3/index.json" --skip-duplicate
+      if: github.event_name != 'pull_request'
+      run: dotnet nuget push *.nupkg --api-key ${{ steps.nuget-login.outputs.NUGET_API_KEY }} --source "https://api.nuget.org/v3/index.json" --skip-duplicate
